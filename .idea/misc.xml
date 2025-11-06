@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ExternalStorageConfigurationManager" enabled="true" />
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/02/pom.xml" />
+        <option value="$PROJECT_DIR$/03/pom.xml" />
+        <option value="$PROJECT_DIR$/04/pom.xml" />
+        <option value="$PROJECT_DIR$/05/pom.xml" />
+        <option value="$PROJECT_DIR$/02-integrity-error/pom.xml" />
+        <option value="$PROJECT_DIR$/03-bounded-context/pom.xml" />
+        <option value="$PROJECT_DIR$/04-additional-rateplan/pom.xml" />
+        <option value="$PROJECT_DIR$/05-core-domain/pom.xml" />
+      </list>
+    </option>
+    <option name="ignoredFiles">
+      <set>
+        <option value="$PROJECT_DIR$/04/pom.xml" />
+        <option value="$PROJECT_DIR$/06-supporting-subdomain/pom.xml" />
+        <option value="$PROJECT_DIR$/06/pom.xml" />
+        <option value="$PROJECT_DIR$/07-cohesive-mechanism/pom.xml" />
+        <option value="$PROJECT_DIR$/07/pom.xml" />
+        <option value="$PROJECT_DIR$/08-abstract-core/pom.xml" />
+      </set>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_21" default="true" project-jdk-name="corretto-21" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/out" />
+  </component>
+</project>

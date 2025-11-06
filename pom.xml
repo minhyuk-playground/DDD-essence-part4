@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>org.eternity</groupId>
+    <artifactId>DDD-essence-part4</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+    <properties>
+        <maven.compiler.release>21</maven.compiler.release>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <modules>
+        <module>01-rateplan-start</module>
+        <module>02-integrity-error</module>
+        <module>03-bounded-context</module>
+        <module>04-additional-rateplan</module>
+        <module>05-core-domain</module>
+        <module>06-core-domain-distillation</module>
+        <module>07-responsibility-layer</module>
+    </modules>
+</project>
