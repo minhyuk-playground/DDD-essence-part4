@@ -6,8 +6,8 @@ import org.eternity.phone.contract.enrollment.domain.Contract;
 import org.eternity.phone.contract.enrollment.domain.Phone;
 import org.eternity.phone.contract.rateplan.domain.RatePlan;
 import org.eternity.phone.contract.rateplan.domain.RegularRatePlan;
-import org.eternity.phone.contract.settlement.service.PhoneBillRepository;
-import org.eternity.phone.contract.settlement.service.SettlementService;
+import org.eternity.phone.contract.billing.service.PhoneBillRepository;
+import org.eternity.phone.contract.billing.service.PhoneBillService;
 import org.eternity.phone.shared.monetary.Money;
 import org.eternity.phone.shared.temporal.TimeInterval;
 import org.eternity.phone.tracking.domain.CallRecord;
@@ -39,7 +39,7 @@ public class MainApplication {
             EntityManager em,
             TransactionTemplate template,
             CallRecordRepository callRecordRepository,
-            SettlementService settlementService,
+            PhoneBillService phoneBillService,
             PhoneBillRepository phoneBillRepository) {
         return (args) -> template.executeWithoutResult((status) -> {
             RatePlan ratePlan = new RegularRatePlan(Money.won(5), Duration.ofSeconds(10));
@@ -63,7 +63,7 @@ public class MainApplication {
                         new CallRecord(UUID.randomUUID(), sessions[2], "010-1111-2222", "010-7777-8888", FAILED, NETWORK_FAILURE, LocalDateTime.of(2025, 1, 1, 10, 0, 50))
                 ));
 
-            settlementService.calculate(contract.getId());
+            phoneBillService.calculate(contract.getId());
 
             System.out.println(phoneBillRepository.findByContractId(contract.getId()).get().getFee());
         });

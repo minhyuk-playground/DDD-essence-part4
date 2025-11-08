@@ -2,7 +2,7 @@ package org.eternity.phone.contract.rateplan.domain;
 
 import jakarta.persistence.DiscriminatorValue;
 import jakarta.persistence.Entity;
-import org.eternity.phone.contract.settlement.domain.Call;
+import org.eternity.phone.contract.billing.domain.Call;
 import org.eternity.phone.shared.monetary.Money;
 
 import java.time.Duration;

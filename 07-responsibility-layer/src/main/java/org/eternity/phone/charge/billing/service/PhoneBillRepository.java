@@ -1,0 +1,10 @@
+package org.eternity.phone.charge.billing.service;
+
+import org.eternity.phone.charge.billing.domain.PhoneBill;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import java.util.Optional;
+
+public interface PhoneBillRepository extends JpaRepository<PhoneBill, Long> {
+    Optional<PhoneBill> findByContractId(Long id);
+}

@@ -1,7 +1,7 @@
 package org.eternity.phone.contract;
 
 import org.eternity.phone.contract.rateplan.domain.NightRatePlan;
-import org.eternity.phone.contract.settlement.domain.Call;
+import org.eternity.phone.contract.billing.domain.Call;
 import org.eternity.phone.shared.monetary.Money;
 import org.eternity.phone.shared.temporal.TimeInterval;
 import org.junit.jupiter.api.Test;

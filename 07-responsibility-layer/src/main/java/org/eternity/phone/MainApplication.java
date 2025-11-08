@@ -2,10 +2,10 @@ package org.eternity.phone;
 
 import jakarta.persistence.EntityManager;
 import lombok.extern.slf4j.Slf4j;
-import org.eternity.phone.billing.rateplan.domain.RatePlan;
-import org.eternity.phone.billing.rateplan.domain.RegularRatePlan;
-import org.eternity.phone.billing.settlement.service.PhoneBillRepository;
-import org.eternity.phone.billing.settlement.service.SettlementService;
+import org.eternity.phone.charge.rateplan.domain.RatePlan;
+import org.eternity.phone.charge.rateplan.domain.RegularRatePlan;
+import org.eternity.phone.charge.billing.service.PhoneBillRepository;
+import org.eternity.phone.charge.billing.service.SettlementService;
 import org.eternity.phone.contract.domain.Contract;
 import org.eternity.phone.contract.domain.Phone;
 import org.eternity.phone.shared.monetary.Money;

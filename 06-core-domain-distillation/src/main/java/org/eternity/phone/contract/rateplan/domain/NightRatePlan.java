@@ -4,7 +4,7 @@ import jakarta.persistence.AttributeOverride;
 import jakarta.persistence.Column;
 import jakarta.persistence.DiscriminatorValue;
 import jakarta.persistence.Entity;
-import org.eternity.phone.contract.settlement.domain.Call;
+import org.eternity.phone.contract.billing.domain.Call;
 import org.eternity.phone.shared.monetary.Money;
 import org.eternity.phone.shared.temporal.TimeInterval;
 

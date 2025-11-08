@@ -1,7 +1,7 @@
 package org.eternity.phone.contract.rateplan.domain;
 
 import jakarta.persistence.*;
-import org.eternity.phone.contract.settlement.domain.Call;
+import org.eternity.phone.contract.billing.domain.Call;
 import org.eternity.phone.shared.domain.AggregateRoot;
 import org.eternity.phone.shared.monetary.Money;
 

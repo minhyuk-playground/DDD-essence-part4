@@ -5,7 +5,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.eternity.phone.domain.*;
 import org.eternity.phone.service.CallRecordsBillingRepository;
 import org.eternity.phone.service.PhoneBillRepository;
-import org.eternity.phone.service.SettlementService;
+import org.eternity.phone.service.PhoneBillService;
 import org.eternity.phone.shared.monetary.Money;
 import org.eternity.phone.shared.temporal.TimeInterval;
 import org.springframework.boot.ApplicationRunner;
@@ -34,7 +34,7 @@ public class MainApplication {
             EntityManager em,
             TransactionTemplate template,
             CallRecordsBillingRepository callRecordsBillingRepository,
-            SettlementService settlementService,
+            PhoneBillService phoneBillService,
             PhoneBillRepository phoneBillRepository) {
         return (args) -> template.executeWithoutResult((status) -> {
             RatePlan ratePlan = new RegularRatePlan(Money.won(5), Duration.ofSeconds(10));
@@ -58,7 +58,7 @@ public class MainApplication {
                         new CallRecord(UUID.randomUUID(), sessions[2], "010-1111-2222", "010-7777-8888", FAILED, LocalDateTime.of(2025, 1, 1, 10, 0, 50))
                 ));
 
-            settlementService.calculate(contract.getId());
+            phoneBillService.calculate(contract.getId());
 
             System.out.println(phoneBillRepository.findByContractId(contract.getId()).get().getFee());
         });
