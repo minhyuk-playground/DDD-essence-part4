@@ -2,9 +2,9 @@ package org.eternity.phone.contract.domain;
 
 import jakarta.persistence.DiscriminatorValue;
 import jakarta.persistence.Entity;
+import org.eternity.phone.tracking.domain.CallRecord;
 import org.eternity.phone.shared.monetary.Money;
 import org.eternity.phone.shared.temporal.TimeInterval;
-import org.eternity.phone.tracking.domain.CallRecord;
 
 import java.time.Duration;
 

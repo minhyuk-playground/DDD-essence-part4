@@ -31,7 +31,7 @@ public class NightRatePlan extends RatePlan {
 
     @Override
     protected Money calculateCallFee(Call call) {
-        if (NIGHT.include(call.period().getStart().toLocalTime())) {
+        if (NIGHT.include(call.startTime())) {
             return nightAmount.times(call.duration().dividedBy(duration));
         }
 

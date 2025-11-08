@@ -7,6 +7,7 @@ import jakarta.persistence.Id;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import org.eternity.phone.contract.domain.Phone;
 import org.eternity.phone.shared.domain.AggregateRoot;
 import org.eternity.phone.shared.monetary.Money;
 

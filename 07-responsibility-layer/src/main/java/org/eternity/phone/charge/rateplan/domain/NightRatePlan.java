@@ -29,6 +29,13 @@ public class NightRatePlan extends RatePlan {
         this.duration = duration;
     }
 
+    public NightRatePlan(Money dayFee, Money nightAmount, Duration duration, AdditionalRatePlan additionalRatePlan) {
+        super(additionalRatePlan);
+        this.dayAmount = dayFee;
+        this.nightAmount = nightAmount;
+        this.duration = duration;
+    }
+
     @Override
     protected Money calculateCallFee(Call call) {
         if (NIGHT.include(call.period().getStart().toLocalTime())) {

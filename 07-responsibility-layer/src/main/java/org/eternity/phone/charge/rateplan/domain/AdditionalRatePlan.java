@@ -15,7 +15,7 @@ public abstract class AdditionalRatePlan {
         this.next = next;
     }
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name="NEXT_PLAN")
     private AdditionalRatePlan next;
 

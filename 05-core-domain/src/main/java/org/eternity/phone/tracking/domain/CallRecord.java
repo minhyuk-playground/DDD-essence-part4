@@ -25,7 +25,6 @@ public class CallRecord extends AggregateRoot<CallRecord, UUID> {
 
     @Enumerated(EnumType.STRING)
     private CallPhase phase;
-
     @Enumerated(EnumType.STRING)
     private CallStatus status;
 

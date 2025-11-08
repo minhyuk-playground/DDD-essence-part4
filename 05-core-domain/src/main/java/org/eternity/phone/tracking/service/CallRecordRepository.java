@@ -17,10 +17,9 @@ public interface CallRecordRepository extends JpaRepository<CallRecord, UUID> {
             join
                 CallRecord c            
                 on s.callingNumber = :phoneNumber
-                   and s.calledNumber = c.calledNumber
                    and s.sessionId = c.sessionId 
                    and s.phase = 'STARTED'
-                   and c.phase = 'COMPLETED'
+                   and c.phase = 'COMPLETED'                     
             """)
     Collection<CallRecord[]> findCallRecordsToBill(@Param("phoneNumber") String phoneNumber);
 }

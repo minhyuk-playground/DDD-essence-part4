@@ -17,6 +17,7 @@
     </option>
     <option name="ignoredFiles">
       <set>
+        <option value="$PROJECT_DIR$/04-additional-rateplan/pom.xml" />
         <option value="$PROJECT_DIR$/04/pom.xml" />
         <option value="$PROJECT_DIR$/06-supporting-subdomain/pom.xml" />
         <option value="$PROJECT_DIR$/06/pom.xml" />

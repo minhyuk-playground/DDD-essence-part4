@@ -1,0 +1,62 @@
+package org.eternity.phone;
+
+import jakarta.persistence.EntityManager;
+import org.eternity.phone.domain.*;
+import org.eternity.phone.service.CallRecordRepository;
+import org.eternity.phone.service.PhoneBillRepository;
+import org.eternity.phone.service.PhoneBillService;
+import org.eternity.phone.shared.monetary.Money;
+import org.eternity.phone.shared.temporal.TimeInterval;
+import org.springframework.boot.ApplicationRunner;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.transaction.support.TransactionTemplate;
+
+import java.time.Duration;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.util.List;
+import java.util.UUID;
+
+import static org.eternity.phone.domain.CallStatus.*;
+
+@Configuration
+public class RunnerConfig {
+    @Bean
+    ApplicationRunner runner(
+            EntityManager em,
+            TransactionTemplate template,
+            CallRecordRepository callRecordRepository,
+            PhoneBillService phoneBillService,
+            PhoneBillRepository phoneBillRepository) {
+
+        return (args) ->
+                template.executeWithoutResult(
+                        (status) -> {
+                            RatePlan ratePlan = new RegularRatePlan(Money.won(5), Duration.ofSeconds(10));
+                            em.persist(ratePlan);
+
+                            Contract contract = new Contract(
+                                    new Phone("010-1111-2222"),
+                                    ratePlan.getId(),
+                                    LocalDate.of(2025, 1, 1),
+                                    TimeInterval.of(LocalDate.of(2025, 1, 15), LocalDate.MAX));
+                            em.persist(contract);
+
+                            UUID[] sessions = {UUID.randomUUID(), UUID.randomUUID(), UUID.randomUUID()};
+                            callRecordRepository.saveAllAndFlush(
+                                    List.of(
+                                            new CallRecord(UUID.randomUUID(), sessions[0], "010-1111-2222", "010-3333-4444", STARTED, LocalDateTime.of(2025, 1, 1, 10, 0, 0)),
+                                            new CallRecord(UUID.randomUUID(), sessions[0], "010-1111-2222", "010-3333-4444", COMPLETED, LocalDateTime.of(2025, 1, 1, 10, 0, 10)),
+                                            new CallRecord(UUID.randomUUID(), sessions[1], "010-1111-2222", "010-5555-6666", STARTED, LocalDateTime.of(2025, 1, 1, 10, 0, 20)),
+                                            new CallRecord(UUID.randomUUID(), sessions[1], "010-1111-2222", "010-5555-6666", COMPLETED, LocalDateTime.of(2025, 1, 1, 10, 0, 30)),
+                                            new CallRecord(UUID.randomUUID(), sessions[2], "010-1111-2222", "010-7777-8888", STARTED, LocalDateTime.of(2025, 1, 1, 10, 0, 40)),
+                                            new CallRecord(UUID.randomUUID(), sessions[2], "010-1111-2222", "010-7777-8888", FAILED, LocalDateTime.of(2025, 1, 1, 10, 0, 50))
+                                    ));
+
+                            phoneBillService.calculate(contract.getId());
+
+                            System.out.println(phoneBillRepository.findByContractId(contract.getId()).get().getFee());
+                        });
+    }
+}

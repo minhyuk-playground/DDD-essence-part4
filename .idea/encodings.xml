@@ -9,6 +9,8 @@
     <file url="file://$PROJECT_DIR$/03-bounded-context/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/04-additional-rateplan/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/04-additional-rateplan/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/04-complex-rateplan/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/04-complex-rateplan/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/04-paint/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/04-paint/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/05-core-domain/src/main/java" charset="UTF-8" />
@@ -19,6 +21,8 @@
     <file url="file://$PROJECT_DIR$/06-additional-rateplan/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/06-core-domain-distillation/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/06-core-domain-distillation/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/06-distillation/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/06-distillation/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/06-side-effect-free-function/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/06-side-effect-free-function/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/06-supporting-subdomain/src/main/java" charset="UTF-8" />

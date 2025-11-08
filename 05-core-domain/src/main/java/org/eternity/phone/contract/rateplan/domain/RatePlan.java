@@ -21,8 +21,9 @@ public abstract class RatePlan extends AggregateRoot<RatePlan, Long> {
 
     public Money calculateFee(Collection<Call> calls) {
         Money fee = calls.stream()
-                        .map(this::calculateCallFee)
+                        .map(call -> this.calculateCallFee(call))
                         .reduce(Money.ZERO, Money::plus);
+
         return afterCalculated(fee);
     }
 

@@ -18,9 +18,9 @@
         <module>01-rateplan-start</module>
         <module>02-integrity-error</module>
         <module>03-bounded-context</module>
-        <module>04-additional-rateplan</module>
+        <module>04-complex-rateplan</module>
         <module>05-core-domain</module>
-        <module>06-core-domain-distillation</module>
+        <module>06-distillation</module>
         <module>07-responsibility-layer</module>
     </modules>
 </project>

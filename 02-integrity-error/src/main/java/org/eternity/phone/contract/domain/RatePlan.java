@@ -1,9 +1,9 @@
 package org.eternity.phone.contract.domain;
 
 import jakarta.persistence.*;
+import org.eternity.phone.tracking.domain.CallRecord;
 import org.eternity.phone.shared.domain.AggregateRoot;
 import org.eternity.phone.shared.monetary.Money;
-import org.eternity.phone.tracking.domain.CallRecord;
 
 import java.util.Collection;
 

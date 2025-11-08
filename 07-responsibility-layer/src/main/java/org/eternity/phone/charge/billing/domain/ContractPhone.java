@@ -1,7 +1,9 @@
 package org.eternity.phone.charge.billing.domain;
 
-public record ContractPhone(Long contractId, Long ratePlanId, Phone phone) {
-    public String phopneNumber() {
-        return phone.getNumber();
+import org.eternity.phone.contract.domain.Phone;
+
+public record ContractPhone(Long contractId, Long ratePlanId, String phoneNumber) {
+    public Phone getPhone() {
+        return new Phone(phoneNumber);
     }
 }
